@@ -1,30 +1,32 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonsComponent } from './counter/buttons/buttons.component';
-import { CounterCustomInputComponent } from './counter/counter-custom-input/counter-custom-input.component';
-import { CounterComponent } from './counter/counter/counter.component';
-import { OutputComponent } from './counter/output/output.component';
-import { counterReducer } from './counter/state/counter.reducers';
+import { HomeComponent } from './component/home/home.component';
+import { HeaderComponent } from './component/share/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent,
-    OutputComponent,
-    ButtonsComponent,
-    CounterCustomInputComponent
+    HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    StoreModule.forRoot({
-      counter: counterReducer
+    HttpClientModule,
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 20,
+      logOnly: environment.production,
+      autoPause: true
     })
   ],
   providers: [],

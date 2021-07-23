@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
 import { changeChannelName, customInput } from '../state/counter.actions';
 import { getChannelName } from '../state/counter.selectors';
-import { CounterState } from '../state/counter.state';
 
 @Component({
   selector: 'app-counter-custom-input',
@@ -12,7 +12,7 @@ import { CounterState } from '../state/counter.state';
 export class CounterCustomInputComponent implements OnInit {
   value: number;
   channelName: string;
-  constructor(private store: Store<{counter: CounterState}>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.store.select(getChannelName).subscribe((data) => {
