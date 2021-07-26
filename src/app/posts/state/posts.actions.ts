@@ -22,10 +22,11 @@ export const updatePost = createAction(
   props<{ post: Post }>()
 );
 
-// export const updatePostSuccess = createAction(
-//   UPDATE_POST_SUCCESS,
-//   props<{ post: Update<Post> }>()
-// );
+export const updatePostSuccess = createAction(
+  UPDATE_POST_SUCCESS,
+  props<{ post: Post }>()
+  // props<{ post: Update<Post> }>()
+);
 
 export const deletePost = createAction(
   DELETE_POST_ACTION,
