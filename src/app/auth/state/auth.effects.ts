@@ -94,7 +94,7 @@ import {
         ofType(autoLogin),
         mergeMap((action) => {
           const user = this.authService.getUserFromLocalStorage();
-          console.log(user);
+          // console.log(user);
           return of(loginSuccess({ user, redirect: false }));
         })
       );

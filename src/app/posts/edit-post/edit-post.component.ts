@@ -21,16 +21,19 @@ export class EditPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.postSubscription = this.store.select(getPostById).subscribe((post) => {
-      console.log(post);
-      if (post) {
-        this.post = post;
-        this.postForm.patchValue({
-          title: post.title,
-          description: post.description,
-        });
-      }
-    });
+    setTimeout(() => {
+      this.postSubscription = this.store.select(getPostById).subscribe((post) => {
+        console.log(post);
+        if (post) {
+          this.post = post;
+          this.postForm.patchValue({
+            title: post.title,
+            description: post.description,
+          });
+        }
+      });
+    }, 1);
+   
 
     // this.createForm();
     // this.postSubscription = this.store.select(getPostById).subscribe((post) => {

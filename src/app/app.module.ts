@@ -12,6 +12,7 @@ import { AuthEffects } from './auth/state/auth.effects';
 import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/share/header/header.component';
 import { LoadingSpinnerComponent } from './component/share/loading-spinner/loading-spinner.component';
+import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { appReducer } from './store/app.state';
 import { CustomSerializer } from './store/router/custom-serializer';
 
@@ -21,6 +22,7 @@ import { CustomSerializer } from './store/router/custom-serializer';
     AppComponent,
     HomeComponent,
     HeaderComponent,
+    SinglePostComponent,
     LoadingSpinnerComponent,
   ],
   imports: [
